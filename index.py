@@ -1,52 +1,56 @@
-# for를 사용, 정해진 횟수만큼 반복 처리를 실시
-# for 변수 in range(반복하고 싶은 횟수):
-#   반복하고 싶은 처리(변수에는 0에서부터 숫자가 대입됨)
-for count in range(3):
-    print('반복하기')
-    print(count)
+# 함수 생성 방법
+# def 함수의 이름():
+#   처리 1
+#   처리 2
 
-word = 'ninja'
-for chara in word:
-    print(chara)
+def washingMachine(mode):
+    print('급수한다')
+    if(mode == 'soft'):
+        print('부드럽게 씻는다')
+    elif(mode == 'hard'):
+        print('세게 씻는다')
+    else:
+        print('씻는다')
+    print('헹군다')
+    print('탈수한다')
+    print('건조한다')
 
-# 리스트형의 각 데이터에 대해 같은 처리를 수행하고 싶을 때
-# for 변수 in 리스트형:
-#   반복하고 싶은 처리(변수에는 리스트의 각 요소가 대입됨)
-music_list = ['DEATH METAL', 'ROCK', 'ANIME', 'POP']
-for music in music_list:
-    print('now playing...' + music)
+mode = 'soft'
+washingMachine(mode)
 
-# 사전형 데이터의 요소별로 같은 처리를 수행하고 싶을 때
-# for 변수 in 사전형:
-#   반복하고 싶은 처리(변수에는 사전의 키가 대입됨)
-menu = {'라면':500, '김밥':430, '만두':210}
-for order in menu:
-    print(order) # 변수 order에 들어가는 데이터는 사전형 데이터가 아니라 사전의 키이다.
-    print(menu[order] * 1.08)
+# 데이터를 반환하는 함수
+def area(radius):
+    result = radius * radius * 3.14
+    return result
 
-# while을 사용하고 정해진 조건 동안 반복 처리를 실시
-# while(조건식):
-#   반복하고 싶은 처리
-#   조건 갱신
-counter = 0
-while(counter < 5):
-    print(counter)
-    counter = counter + 1 # 무한루프는 조건 갱신 X
+print(area(5))
 
-# 도중에 처리를 종료
-# 반복문 안에서 break
-while(True):
-    print('주먹')
-    print('발차기')
-    break
-    print('필살비법')
+# 내장 함수
+# len(): 인자로 전달한 데이터의 길이나 요소의 수를 반환함
+animal = ['cat', 'dog', 'duck']
+print(len(animal))
+# max(): 인자로 전달한 데이터 중에서 가장 큰 값을 반환
+print(max(100, 10, 50))
+print(max('thunderbolt')) # 알파벳 z에 가장 가까운 문자
+# min(): 인자로 전달한 데이터 중에서 가장 작은 값을 반환
+print(min(300, 30, 3000))
+print(min('thunderbolt')) # 알파벳 a에 가장 가까운 문자
 
-# 도중에 처리를 넘기고 싶을 때
-# 반복문 안에서 continue
-family = ['ryu-ko', 'mako', 'satsuki']
-for kid in family:
-    print('Good Morning! ' + kid)
-    print('Wake up')
-    print('breakfast')
-    continue # 처음으로 되돌아감
-    print('Go to School')
+print(min('1Aa')) # 1 
+print(max('1Aa')) # a
+# 숫자 > 알파벳 대문자 > 알파벳 소문자 순으로 크기를 계산
+
+# sort(): 전달한 데이터를 정렬하여 리스트형으로 변환하는 함수 (무작위)
+print(sorted('thunderbolt')) 
+
+# print(): 출력을 위해 사용
+
+# type(): 조사하고 싶은 데이터나 변수를 전달하면 데이터 타입을 반환
+hatena_1 = 9800
+print(type(hatena_1))
+
+# dir(): 어떤 메소드가 있는지 잊어버렸을 때 사용
+string = 'hey'
+print(dir(string))
+# 그냥 dir()은 dir이 실행된 시점에서 유효한 변수의 목록이 나타남
+print(dir())
